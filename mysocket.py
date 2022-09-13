@@ -1,13 +1,13 @@
 import socket
 import threading
 s = socket.socket(socket.AF_INET , socket.SOCK_DGRAM)
-s.bind(("192.168.56.1",2435))
+s.bind(("192.168.56.1",2435)) #my ip
 
 def send():
     while(True):
         mess = input("Enter message to send..")
         b_mess = mess.encode()
-        s.sendto(b_mess,("192.168.56.102",2435))
+        s.sendto(b_mess,("192.168.56.102",2435)) #anthor ip
         print("sent: ",mess)
 
 def recive():
